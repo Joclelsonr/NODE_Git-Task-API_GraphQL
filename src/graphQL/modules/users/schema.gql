@@ -1,0 +1,9 @@
+type User {
+  id: String
+  login: String
+  avatar_url: String
+}
+
+type Query {
+  user(login: String): User
+}
