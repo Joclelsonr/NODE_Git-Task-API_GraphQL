@@ -1,4 +1,4 @@
-const { dataBase } = require("../dataBase/connection");
+const dataBase = require("../dataBase/connection");
 
 class UserRegisterService {
   async addUser(user) {

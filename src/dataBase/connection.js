@@ -11,4 +11,4 @@ const dataBase = require("knex")({
   },
 });
 
-module.exports = { dataBase };
+module.exports = dataBase;
