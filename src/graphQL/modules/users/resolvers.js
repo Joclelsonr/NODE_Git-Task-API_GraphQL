@@ -10,7 +10,7 @@ module.exports = {
       const [userFound] = await dataSources.userRegisterService.getUser(login);
 
       if (userFound) {
-        userFound.token = dataSources.gerenatorToken.createToken(userFound.id);
+        userFound.token = dataSources.generatorToken.createToken(userFound.id);
         return userFound;
       }
 
@@ -27,7 +27,7 @@ module.exports = {
       });
 
       const newUser = await dataSources.userRegisterService.getUser(login);
-      newUser.token = dataSources.gerenatorToken.createToken(userFound.id);
+      newUser.token = dataSources.generatorToken.createToken(userFound.id);
 
       return newUser;
     },

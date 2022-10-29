@@ -7,5 +7,5 @@ module.exports = () => ({
   gitHubService: GitHubService,
   userRegisterService: UserRegisterService,
   tasksRegisterService: TasksRegisterService,
-  gerenatorToken: Generator,
+  generatorToken: Generator,
 });
