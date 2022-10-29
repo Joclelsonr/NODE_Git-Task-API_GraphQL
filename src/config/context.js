@@ -1,4 +1,16 @@
+const Generator = require("../helpers/Gerenator");
+const NoPermissionError = require("../errors/NoPermissionError");
+
 module.exports = ({ req }) => {
-  const user_id = req.headers.authorization;
-  return { user_id };
+  const token = req.headers.authorization;
+  return {
+    validate() {
+      try {
+        const { id } = new Generator().verifyToken(token);
+        return id;
+      } catch (error) {
+        throw new NoPermissionError("Você não tem autorização!");
+      }
+    },
+  };
 };

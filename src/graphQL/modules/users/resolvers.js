@@ -9,7 +9,10 @@ module.exports = {
     async user(_, { login }, { dataSources }) {
       const [userFound] = await dataSources.userRegisterService.getUser(login);
 
-      if (userFound) return userFound;
+      if (userFound) {
+        userFound.token = dataSources.gerenatorToken.createToken(userFound.id);
+        return userFound;
+      }
 
       const {
         id,
@@ -23,9 +26,10 @@ module.exports = {
         avatar_url,
       });
 
-      const [user] = await dataSources.userRegisterService.getUser(login);
+      const newUser = await dataSources.userRegisterService.getUser(login);
+      newUser.token = dataSources.gerenatorToken.createToken(userFound.id);
 
-      return user;
+      return newUser;
     },
   },
 };
