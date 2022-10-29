@@ -11,6 +11,7 @@ input TaskInput {
 
 type Query {
   tasks(login: String): [Task]
+  task(id: String): [Task]
 }
 
 type Mutation {
