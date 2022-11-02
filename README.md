@@ -1,7 +1,10 @@
+<div align=center>
+
 ![GraphQL](https://user-images.githubusercontent.com/104178622/199572925-6e6d7364-fb7c-46ee-920c-476cd2887f23.jpg)
 
 
 # CRUD Tarefas - API GraphQL com Node.JS
+</div>
 
 <hr>
 
